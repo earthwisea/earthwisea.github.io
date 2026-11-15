@@ -1,13 +1,13 @@
 ---
 layout: earthwise
 ---
-<section class="ew-hero ew-dark ew-hero--article">
+<section class="ew-hero ew-dark ew-hero--article {{ page.hero_class }}">
   <div class="ew-wrap ew-hero__in">
     {% if page.draft %}<p class="ew-draft">Draft layout &middot; all numbers, maps and charts are dummy placeholders &middot; not for publication</p>{% endif %}
-    {% if page.eyebrow %}<p class="ew-kicker">{{ page.eyebrow }}</p>{% endif %}
+    {% if page.eyebrow %}<p class="ew-kicker">{{ page.eyebrow }}{% if page.coming_soon %} <span class="ew-soon">Coming soon</span>{% endif %}</p>{% endif %}
     <h1>{{ page.title }}</h1>
     {% if page.lede %}<p class="ew-sub">{{ page.lede }}</p>{% endif %}
-    {% if page.cta_label %}<p class="ew-hero__btns"><a class="ew-btn ew-btn--solid" href="{{ page.cta_url }}">{{ page.cta_label }}<i></i></a>{% if page.cta_secondary_label %}<a class="ew-btn ew-btn--outline-light" href="{{ page.cta_secondary_url }}">{{ page.cta_secondary_label }}<i></i></a>{% endif %}</p>{% endif %}
+    {% if page.cta_label and page.coming_soon != true %}<p class="ew-hero__btns"><a class="ew-btn ew-btn--solid" href="{% include ew-href.html url=page.cta_url subject=page.cta_subject %}">{{ page.cta_label }}<i></i></a>{% if page.cta_secondary_label %}<a class="ew-btn ew-btn--outline-light" href="{{ page.cta_secondary_url }}">{{ page.cta_secondary_label }}<i></i></a>{% endif %}</p>{% endif %}
   </div>
 </section>
 
@@ -41,7 +41,7 @@ layout: earthwise
   <div class="ew-wrap">
     <h2>{{ page.cta_band_title | default: page.cta_label }}</h2>
     {% if page.cta_band_text %}<p class="ew-sub">{{ page.cta_band_text }}</p>{% endif %}
-    <a class="ew-btn ew-btn--solid" href="{{ page.cta_url }}">{{ page.cta_label }}<i></i></a>
+    <a class="ew-btn ew-btn--solid" href="{% include ew-href.html url=page.cta_url subject=page.cta_subject %}">{{ page.cta_label }}<i></i></a>
   </div>
 </section>
 {% endif %}

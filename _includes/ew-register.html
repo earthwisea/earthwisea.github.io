@@ -7,7 +7,6 @@
 <table>
 <thead><tr><th>ID</th><th>Type</th><th>Element</th><th>Source output</th><th>Owner</th><th>Status</th></tr></thead>
 <tbody>
-<tr><td><a href="#kpi-{{ d.kpis.id }}">{{ d.kpis.id }}</a></td><td>KPI panel</td><td>Monthly key numbers</td><td>{{ d.kpis.source }}</td><td>{{ d.kpis.owner }}</td><td class="ew-cell--placeholder">placeholder</td></tr>
 {%- for f in d.figures -%}
 <tr><td><a href="#fig-{{ f.id }}">{{ f.id }}</a></td><td>{{ f.type }}</td><td>{{ f.title }}</td><td>{{ f.source }}</td><td>{{ f.owner }}</td><td class="ew-cell--{{ f.status }}">{{ f.status }}</td></tr>
 {%- endfor -%}

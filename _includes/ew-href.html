@@ -1,0 +1,6 @@
+{%- comment -%}
+  Outputs a link target. url="mailto" builds a mailto: to site.contact_email,
+  with an optional subject. Any other url is printed as is.
+  Usage: href="{% include ew-href.html url=x.url subject=x.subject %}"
+{%- endcomment -%}
+{%- if include.url == 'mailto' -%}mailto:{{ site.contact_email }}{%- if include.subject -%}?subject={{ include.subject | uri_escape }}{%- endif -%}{%- else -%}{{ include.url }}{%- endif -%}

@@ -3,7 +3,7 @@
     <a class="ew-logo" href="/">Earthwise</a>
     <button class="ew-burger" id="ew-burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
     <nav class="ew-nav" id="ew-nav">
-      {%- for l in site.data.home.nav -%}<a href="{{ l.url }}">{{ l.label }}</a>{%- endfor -%}
+      {%- for l in site.data.home.nav -%}<a href="{% include ew-href.html url=l.url subject=l.subject %}">{{ l.label }}</a>{%- endfor -%}
     </nav>
   </div>
 </header>

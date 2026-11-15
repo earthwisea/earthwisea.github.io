@@ -1,45 +1,56 @@
 # Landing page + shared header/footer content. DRAFT COPY: edit freely.
+# url: "mailto" opens an email to site.contact_email (see _config.yml), with the optional subject.
 nav:
   - { label: "Radar monitoring", url: "/radar-mine-monitoring/" }
-  - { label: "How it works", url: "/radar-mine-monitoring/#how" }
   - { label: "About", url: "/about/" }
-  - { label: "Contact", url: "mailto:hello@example.com" }   # placeholder address
+  - { label: "Contact", url: "/contact/" }
 hero:
-  kicker: "Satellite radar intelligence"
-  title: "Know what's happening at your mine, before anyone tells you."
-  sub: "Independent monthly monitoring of a single mining concession from satellite radar, through cloud and rain."
-  cta_label: "Request a pilot"
-  cta_url: "/radar-mine-monitoring/#pilot"
+  kicker: "Satellite intelligence"
+  title: "See what's changing on the ground, whatever the weather."
+  sub: "Radar and machine learning that turn satellite data into clear answers about mines and land in Indonesia."
+  cta_label: "Explore radar mine monitoring"
+  cta_url: "/radar-mine-monitoring/"
 rows:
-  - title: "See through the clouds"
+  - title: "Beyond optical"
     button: { label: "Read more", url: "/radar-mine-monitoring/" }
     cards:
-      - { title: "Every six days", text: "Radar images the ground day and night, whatever the weather, so the record has no gaps.", label: "How it works", url: "/radar-mine-monitoring/#radar" }
-      - { title: "Hectares, dates, activity", text: "For every opening: how much, since when and how active, with a confidence level on each number.", label: "What you'll know", url: "/radar-mine-monitoring/#insights" }
-  - title: "Built for decision-makers"
-    button: { label: "Read more", url: "/radar-mine-monitoring/#meeting" }
+      - { title: "Clouds hide the mine", text: "Optical satellites mapped the footprint, but over Sulawesi and Maluku they lose whole seasons, sometimes whole years, to cloud.", label: "What optical could do", url: "/radar-mine-monitoring/#optical" }
+      - { title: "Radar fills the gaps", text: "Radar sees through cloud, so every year since 2017 is mapped and every month from now on.", label: "What radar adds", url: "/radar-mine-monitoring/#radar" }
+  - title: "A report built for decision-makers"
+    button: { label: "Read more", url: "/radar-mine-monitoring/#report" }
     cards:
-      - { title: "Walk into the meeting informed", text: "A short monthly briefing written for people who decide, with GIS files for your technical team.", label: "The briefing", url: "/radar-mine-monitoring/#meeting" }
-      - { title: "Harder than it looks", text: "Why a continuous, validated history back to 2017 is difficult to reproduce.", label: "Why Earthwise", url: "/radar-mine-monitoring/#moat" }
+      - { title: "One PDF a month", text: "Mining expansion, reclamation and carbon loss and gain for your concession, in a short report written for people who decide.", label: "What's in the report", url: "/radar-mine-monitoring/#report" }
+      - { title: "Compare over time", text: "Each report builds on the last, so you see change month by month and year by year, back to 2017.", label: "See the history", url: "/radar-mine-monitoring/#report" }
 banner:
   kicker: "Pilot"
   title: "Start with one concession."
-  text: "Tell us the concession name or licence number. We build its history back to 2017 and send your first briefing."
+  text: "Share your concession boundary with us in confidence. We build its history back to 2017 and send your first monthly report."
   label: "Request a pilot"
-  url: "/radar-mine-monitoring/#pilot"
+  url: "mailto"
+  subject: "Pilot: Radar mine monitoring"
 latest:
   title: "Latest"
-  label: "All updates"
+  label: "Radar mine monitoring"
   url: "/radar-mine-monitoring/"
-strip:
-  - { kicker: "Coverage", text: "Radar sees through cloud, smoke and darkness.", label: "Learn more", url: "/radar-mine-monitoring/#radar" }
-  - { kicker: "Method", text: "From raw imagery to validated change per opening.", label: "Learn more", url: "/radar-mine-monitoring/#how" }
-  - { kicker: "Limits", text: "What we can't tell you, stated plainly.", label: "Learn more", url: "/radar-mine-monitoring/#limits" }
-  - { kicker: "Deliverables", text: "Briefing, maps, tables and GIS files.", label: "Learn more", url: "/radar-mine-monitoring/#deliverables" }
+  list:
+    - { kicker: "Service", title: "Radar mine monitoring: see your concession through the clouds", url: "/radar-mine-monitoring/" }
+services:
+  title: "In development"
+  list:
+    - { kicker: "Regional mine monitoring", text: "Every mine opening across a whole region, mapped.", label: "Coming soon", url: "/regional-mine-monitoring/" }
+    - { kicker: "Water turbidity", text: "Sediment in rivers and coasts downstream of the mine.", label: "Coming soon", url: "/water-turbidity/" }
+    - { kicker: "Deforestation analysis", text: "Forest loss, measured and dated, for your environmental assessment.", label: "Coming soon", url: "/deforestation-analysis/" }
+    - { kicker: "Concession due diligence", text: "Know the ground before you bid or buy.", label: "Coming soon", url: "/concession-due-diligence/" }
 footer:
   columns:
     - title: "Product"
-      links: [ { label: "Radar mine monitoring", url: "/radar-mine-monitoring/" }, { label: "How it works", url: "/radar-mine-monitoring/#how" }, { label: "FAQ", url: "/radar-mine-monitoring/#faq" } ]
+      links: [ { label: "Radar mine monitoring", url: "/radar-mine-monitoring/" } ]
+    - title: "In development"
+      links:
+        - { label: "Regional mine monitoring", url: "/regional-mine-monitoring/" }
+        - { label: "Water turbidity", url: "/water-turbidity/" }
+        - { label: "Deforestation analysis", url: "/deforestation-analysis/" }
+        - { label: "Concession due diligence", url: "/concession-due-diligence/" }
     - title: "Company"
-      links: [ { label: "About", url: "/about/" }, { label: "Contact", url: "mailto:hello@example.com" } ]
+      links: [ { label: "About", url: "/about/" }, { label: "Contact", url: "/contact/" } ]
   legal: "Earthwise Analytics"

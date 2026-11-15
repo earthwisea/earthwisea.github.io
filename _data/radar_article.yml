@@ -4,8 +4,12 @@
 # Single source of truth for every map, chart, image and table on
 # radar-mine-monitoring/index.md. The page refers to entries by ID only.
 #
+# Placeholders exist ONLY for the promised outputs (F1, F3, F4, F5, F6) and
+# for items derived from the same processes (F2, F7, F8, T1, T2). T3 is static.
+# See _context/site-plan.md section 4.
+#
 # To swap a placeholder for the real thing:
-#   1. put the file under assets/images/radar/
+#   1. put the file under assets/images/radar/  (GIFs work the same way)
 #   2. set  image: assets/images/radar/<file>  on the entry
 #   3. set  status: final
 # All numbers below are FICTIONAL and exist only to test the layout.
@@ -14,169 +18,107 @@
 concession:
   name: "Concession KN-07"            # fictional
   holder: "PT Contoh Nikel (fictional)"
-  licence: "IUP Operasi Produksi"
   commodity: "Nickel"
   region: "Central Sulawesi"
-  licensed_area_ha: 1850
   report_month: "October 2026"
   history_from: "2017"
 
-# --- KPI panel (K1) ----------------------------------------------------------
-kpis:
-  id: K1
-  source: "O6 concession monthly statistics"
-  owner: "Nasir"
-  tiles:                              # (named 'tiles', not 'items', to avoid clashing with built-in methods)
-    - label: "Mine footprint"
-      value: "642 ha"
-      note: "34.7% of licensed area"
-    - label: "Actively worked"
-      value: "251 ha"
-      note: "39% of footprint, last 60 days"
-    - label: "Dormant > 6 months"
-      value: "273 ha"
-      note: "11 openings"
-    - label: "New this month"
-      value: "14.6 ha"
-      note: "3 new openings"
-    - label: "Outside boundary"
-      value: "6.2 ha"
-      note: "2 locations, to verify"
-    - label: "Change vs last month"
-      value: "+2.3%"
-      note: "footprint growth"
-
 # --- Figures -------------------------------------------------------------------
-# type: map | chart | image | diagram     ratio: CSS aspect-ratio (w/h)
-# width: normal | wide                     status: placeholder | draft | final
+# type: map | chart | image | gif | diagram   ratio: CSS aspect-ratio (w/h)
+# width: normal | wide                        status: placeholder | draft | final
+# promise: promised | derived                 (which list in site-plan.md it comes from)
 figures:
   - id: F1
-    type: image
+    type: gif
+    promise: promised
     width: wide
     ratio: "21/9"
-    title: "Same day, same concession: optical vs radar"
-    shows: "Split view. Left: a Sentinel-2 image of the concession hidden under cloud. Right: the Sentinel-1 radar image from the same week, pits and roads clearly visible."
-    source: "Sentinel-2 + Sentinel-1 scenes of the pilot concession"
+    title: "Yearly land cover 2017–2025: radar vs optical"
+    shows: "Animated side-by-side, one frame per year 2017–2025. Left: annual Sentinel-2 optical image of the concession (cloud gaps visible). Right: annual SAR-based land-cover map of the same year. Year label on each frame."
+    source: "Annual SAR land cover 2017–2025 + annual Sentinel-2 composites"
     owner: "Nasir"
     status: placeholder
-    caption: "Cloud hides the mine from optical satellites for weeks at a time. Radar does not care."
+    caption: "Where optical is blank or blurred by cloud, the radar-based map is complete, every year since 2017."
 
   - id: F2
     type: chart
+    promise: derived
     width: normal
     ratio: "16/9"
-    title: "Usable optical days vs radar passes, per month"
-    shows: "Grouped bars for the last 12 months: number of cloud-free optical observations vs number of Sentinel-1 passes. Wet-season months show optical near zero, radar steady."
-    source: "O1 radar coverage table + Sentinel-2 cloud statistics"
+    title: "Clear optical images vs radar passes, per year"
+    shows: "Grouped bars for 2017–2025: number of cloud-free Sentinel-2 observations vs number of Sentinel-1 passes over the concession."
+    source: "Sentinel-2 cloud statistics + Sentinel-1 acquisition list (same processing)"
     owner: "Nasir"
     status: placeholder
-    caption: "In the wet season, optical imagery often gives you nothing. Radar keeps counting."
+    caption: "Optical needs a clear sky. In some years it barely gets one."
 
   - id: F3
-    type: diagram
+    type: gif
+    promise: promised
     width: wide
-    ratio: "21/7"
-    title: "How it works, in four steps"
-    shows: "Four boxes left to right: 1 Map the mine (land cover + mine mask) → 2 Watch every opening (radar change test each pass) → 3 Turn pixels into decisions (hectares, dates, status) → 4 Check our own work (validation, confidence)."
-    source: "Design only, no data dependency"
-    owner: "Web"
+    ratio: "16/9"
+    title: "Monthly radar results"
+    shows: "Animated sequence of monthly radar-based land-cover maps of the concession, one frame per month, with month label. Shows expansion and recovery over time."
+    source: "Monthly radar results"
+    owner: "Nasir"
     status: placeholder
-    caption: "Machine learning tells us where the mine is. Radar tells us what is happening inside it, and when."
+    caption: "Month by month, the mine as it actually moves. Each monthly report adds one frame."
 
   - id: F4
-    type: map
-    width: wide
+    type: chart
+    promise: promised
+    width: normal
     ratio: "16/9"
-    title: "Land cover and mine mask"
-    shows: "Concession boundary (WIUP) over a land-cover map: active pit / bare ground, waste and tailings, roads and infrastructure, water, vegetation, revegetation. Legend with hectares per class."
-    source: "O2 land cover map, O3 mine mask"
+    title: "Mining expansion rate"
+    shows: "Bars: hectares of newly opened mining ground per year, 2017–2025, with a line for the cumulative mining footprint."
+    source: "Annual SAR land cover (transition to mining class)"
     owner: "Nasir"
     status: placeholder
-    caption: "Step 1: the land-cover model draws the mine footprint that all radar analysis works inside."
+    caption: "How many hectares were opened each year, and how the footprint added up."
 
   - id: F5
-    type: map
-    width: wide
+    type: chart
+    promise: promised
+    width: normal
     ratio: "16/9"
-    title: "Activity status of every opening"
-    shows: "Footprint coloured by status: active (last 60 days), recently inactive (60–180 days), dormant (> 180 days), new this month. Opening IDs labelled."
-    source: "O4 activity status map"
+    title: "Reclamation rate"
+    shows: "Bars: hectares of formerly mined ground classified as revegetating per year, 2017–2025; optional line for the share of the footprint reclaimed."
+    source: "Annual SAR land cover (transition from mining to revegetation)"
     owner: "Nasir"
     status: placeholder
-    caption: "Only part of the footprint is actually being worked. This map shows which part."
+    caption: "How much disturbed land is actually coming back."
 
   - id: F6
-    type: map
+    type: chart
+    promise: promised
     width: normal
-    ratio: "4/3"
-    title: "When each opening started"
-    shows: "Openings coloured by first detected change date (sequential colour ramp from 2017 to 2026). Openings that started before the recorded permit date carry a marker."
-    source: "O5 change timing rasters + WIUP permit dates"
+    ratio: "16/9"
+    title: "Carbon loss and gain"
+    shows: "Diverging bars per year 2017–2025: estimated carbon lost to clearing (below zero) and regained by revegetation (above zero), with a net line. Units: t CO2e."
+    source: "Annual land-cover transitions × carbon factors"
     owner: "Nasir"
     status: placeholder
-    caption: "A start date for every opening, independent of any internal record."
+    caption: "Estimated from land cover, not measured in the field."
 
   - id: F7
-    type: map
-    width: normal
-    ratio: "4/3"
-    title: "Disturbance beyond the concession boundary"
-    shows: "Zoomed inset at each location where disturbance extends beyond the WIUP boundary, with area in hectares and a recent image underneath."
-    source: "O3 mine mask + WIUP boundary"
-    owner: "Nasir"
-    status: placeholder
-    caption: "Flagged for verification, before anyone outside the company finds it."
-
-  - id: F8
-    type: chart
-    width: normal
-    ratio: "16/9"
-    title: "Activity through the seasons"
-    shows: "Monthly active area (ha) over 24 months, wet-season months shaded. A rainfall line on a secondary axis is optional."
-    source: "O4 activity status, O5 change timing"
-    owner: "Nasir"
-    status: placeholder
-    caption: "Does the rain really stop work? Now you can see it month by month."
-
-  - id: F9
-    type: chart
-    width: wide
-    ratio: "21/9"
-    title: "Footprint growth since 2017"
-    shows: "Cumulative footprint (area chart) with monthly new disturbance (bars) on top. The current month is highlighted."
-    source: "O6 concession monthly statistics"
-    owner: "Nasir"
-    status: placeholder
-    caption: "A growth story ready for the board."
-
-  - id: F10
-    type: chart
-    width: normal
-    ratio: "16/9"
-    title: "Ponds and settling basins"
-    shows: "Water area per pond over the last 12 months; fill and drain events marked."
-    source: "O7 pond / water dynamics"
-    owner: "Nasir"
-    status: placeholder
-    caption: "Ponds that swell in the wet season are worth watching."
-
-  - id: F11
     type: image
+    promise: derived
     width: wide
     ratio: "21/9"
     title: "Raw radar vs corrected radar"
     shows: "Three panels of the same hillside: raw Sentinel-1 (speckled, slopes bright and dark from geometry), after terrain correction, after speckle filtering. The pit edge only becomes readable in the third panel."
-    source: "Sentinel-1 preprocessing chain (S1 stage)"
+    source: "Sentinel-1 preprocessing chain"
     owner: "Nasir"
     status: placeholder
     caption: "The data is free. Making it readable is the work."
 
-  - id: F12
+  - id: F8
     type: image
+    promise: derived
     width: normal
     ratio: "3/4"
-    title: "Your monthly briefing"
-    shows: "Mock-up of page 1 of the monthly briefing: headline findings, KPI panel, small activity map, questions for your team."
+    title: "A page from your monthly report"
+    shows: "Mock-up of the PDF report's first page: headline numbers, this month's radar map, small expansion and reclamation charts."
     source: "Report template (in progress)"
     owner: "Web"
     status: placeholder
@@ -185,48 +127,35 @@ figures:
 # --- Tables ------------------------------------------------------------------
 tables:
   - id: T1
-    title: "Openings at a glance"
-    source: "O4 activity status + O5 change timing"
+    promise: derived
+    title: "Land cover by class, per year (ha)"
+    source: "Annual SAR land cover 2017–2025"
     owner: "Nasir"
     status: placeholder
-    caption: "Extract of the openings table delivered each month. Values are fictional."
-    columns: ["Opening", "Area (ha)", "Status", "First change detected", "Last activity", "Note"]
+    caption: "Extract of the yearly land-cover table in the first report. Values are fictional."
+    columns: ["Year", "Mining ground", "Revegetation", "Vegetation", "Water", "Other"]
     rows:
-      - ["B-03", "48.2", "Active", "Mar 2019", "Oct 2026", ""]
-      - ["B-07", "36.9", "Active", "Aug 2021", "Oct 2026", ""]
-      - ["B-11", "22.4", "Dormant", "Jan 2020", "Feb 2026", "No activity for 8 months"]
-      - ["B-14", "17.8", "Recently inactive", "Jun 2023", "Jul 2026", ""]
-      - ["B-19", "9.6", "Active", "Nov 2022", "Oct 2026", "Started before recorded permit date: verify"]
-      - ["B-22", "6.1", "New", "Oct 2026", "Oct 2026", "New this month"]
-      - ["B-23", "5.3", "New", "Oct 2026", "Oct 2026", "New this month"]
+      - ["2017", "312", "18", "1,402", "41", "77"]
+      - ["2019", "398", "35", "1,301", "44", "72"]
+      - ["2021", "471", "62", "1,201", "47", "69"]
+      - ["2023", "566", "88", "1,082", "50", "64"]
+      - ["2025", "642", "121", "974", "52", "61"]
 
   - id: T2
-    title: "Questions to put to your team"
-    source: "Derived from the month's findings"
-    owner: "Analyst"
-    status: placeholder
-    caption: "Example questions generated from the fictional findings above."
-    columns: ["#", "Question", "Based on"]
-    rows:
-      - ["1", "Opening B-11 has shown no activity for 8 months. Is it scheduled for reclamation, or is it on hold?", "Activity status"]
-      - ["2", "B-19 shows ground change from November 2022, before the recorded permit start. Can we confirm the timeline?", "Start date vs permit"]
-      - ["3", "About 6 ha of disturbance sits outside our boundary at two locations. Who is working there?", "Outside boundary"]
-      - ["4", "Active area held at 80% of dry-season levels through the wet season. How does that compare with the production plan?", "Seasonal activity"]
-
-  - id: T3
-    title: "How much you can lean on this month's numbers"
-    source: "O1 radar coverage + O9 validation results"
+    promise: derived
+    title: "Headline numbers · October 2026"
+    source: "Monthly radar results + annual land cover"
     owner: "Nasir"
     status: placeholder
-    caption: "Every briefing carries this box. Values are fictional."
-    columns: ["Measure", "This month", "What it means"]
+    caption: "The first page of every report. Values are fictional."
+    columns: ["Measure", "This month", "vs last month", "Since 2017"]
     rows:
-      - ["Radar passes over the concession", "10", "Activity status is based on about one pass every 3 days"]
-      - ["Usable optical observations", "1", "Land cover relied mainly on radar this month"]
-      - ["Mapping accuracy (last validation)", "XX%", "Share of reference points classified correctly"]
-      - ["Start-date precision", "± 6–12 days", "Depends on the revisit interval in that period"]
+      - ["Mining ground", "651 ha", "+9 ha", "+339 ha"]
+      - ["Average expansion", "", "", "41 ha / year"]
+      - ["Reclaimed (revegetating)", "124 ha", "+3 ha", "+106 ha"]
+      - ["Net carbon change", "", "", "−XX,XXX t CO2e"]
 
-  - id: T4
+  - id: T3
     title: "What you receive"
     source: "Service definition"
     owner: "Web"
@@ -234,8 +163,6 @@ tables:
     caption: ""
     columns: ["Deliverable", "Format", "When"]
     rows:
-      - ["Monthly briefing (one-page summary + detail pages)", "PDF", "Monthly"]
-      - ["Openings table", "PDF + spreadsheet", "Monthly"]
-      - ["Maps: land cover, activity, start dates", "PDF + GIS files", "Monthly"]
-      - ["Baseline history from 2017", "Report + GIS files", "Once, at start"]
-      - ["Questions for your team", "Inside the briefing", "Monthly"]
+      - ["Monthly report: this month's radar map, headline numbers, expansion, reclamation and carbon charts", "PDF", "Monthly"]
+      - ["History from 2017: yearly land cover and rates", "Included in the first report", "Once, at start"]
+      - ["Method notes", "Back pages of each report", "Monthly"]

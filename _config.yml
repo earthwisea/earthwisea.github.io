@@ -11,6 +11,9 @@ name: 'Earthwise Analytics'
 description: "Satellite Based Geospatial Intelligent Monitoring System"
 
 short_url: 'https://earthwisea.github.io/'
+
+# All contact / pilot buttons use this address (see _includes/ew-href.html)
+contact_email: 'rifsentosa+earthwisea@gmail.com'
 google_analytics: 
 disqus: 
 # edit baseurl to simply '/' if using as your personal page (instead of a project page)

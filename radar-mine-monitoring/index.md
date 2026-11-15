@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Know what's happening at your mine, before anyone tells you."
-description: "Independent, monthly, radar-based monitoring of a single mining concession, through cloud and rain."
+description: "Monthly radar-based monitoring of a mining concession, through cloud and rain, delivered as one PDF report."
 permalink: /radar-mine-monitoring/
 navigation: true
 current: radar
@@ -9,216 +9,169 @@ class: "page-template article-template"   # body class (layout front matter is n
 draft: true            # true = show draft banner + placeholder register; set false to publish
 
 eyebrow: "Radar Mine Monitoring"
-lede: "Independent monthly monitoring of your concession from satellite radar, which sees through cloud, day and night. Hectares, dates and activity for every opening, with a confidence level on every number."
+lede: "Monthly monitoring of your concession from satellite radar, which sees through cloud, day and night. Mining expansion, reclamation and carbon, in one PDF report each month."
 cta_label: "Request a pilot for your concession"
-cta_url: "#pilot"
-cta_secondary_label: "See what you'll know"
-cta_secondary_url: "#insights"
+cta_url: "mailto"
+cta_subject: "Pilot: Radar mine monitoring"
+cta_secondary_label: "See what's in the report"
+cta_secondary_url: "#report"
 cta_band_title: "See your concession through the clouds."
-cta_band_text: "Tell us the concession name or licence number. We build its history back to 2017 and send your first briefing."
+cta_band_text: "Share your concession boundary with us in confidence. We build its history back to 2017 and send your first monthly report."
 hero_figure: F1
 
 toc:
-  - { id: questions,    label: "The questions your reports can't answer" }
-  - { id: radar,        label: "Every six days, through the clouds" }
-  - { id: how,          label: "How it works" }
-  - { id: insights,     label: "What you'll know each month" }
-  - { id: meeting,      label: "Walk into the meeting already knowing" }
-  - { id: moat,         label: "Why this is harder than it looks" }
-  - { id: limits,       label: "What we won't tell you" }
-  - { id: deliverables, label: "What you receive" }
-  - { id: pilot,        label: "Start with one concession" }
-  - { id: faq,          label: "Questions you may have" }
+  - { id: questions, label: "The questions your reports can't answer" }
+  - { id: optical,   label: "Chapter 1: what optical satellites could do" }
+  - { id: radar,     label: "Chapter 2: radar fills the gaps" }
+  - { id: report,    label: "What's in your monthly report" }
+  - { id: craft,     label: "Why this is harder than it looks" }
+  - { id: limits,    label: "What we won't tell you" }
+  - { id: pilot,     label: "Start with one concession" }
+  - { id: faq,       label: "Questions you may have" }
 ---
 
 ## The questions your reports can't answer {#questions}
 
-You are responsible for a mine worth more than any report written about it. Yet some of the simplest questions about it still don't have a straight answer.
+You are responsible for a mine worth more than any report written about it. Yet some simple questions about it still don't have a straight answer.
 {: .ew-intro}
 
-### The questions you already have
-
 <ul class="ew-qlist">
-<li>How much of our footprint is actually being worked right now?</li>
-<li>When did that pit really open, and was it before the permit?</li>
-<li>Has anything been cleared outside our boundary?</li>
+<li>How fast is the mine really expanding, year on year?</li>
+<li>How much disturbed land has actually been reclaimed?</li>
+<li>How much carbon has the clearing released, and how much has regrowth taken back?</li>
 <li>Did work really slow down in the wet season, or did the reports just say so?</li>
-<li>Do our survey hectares match what anyone can see from space?</li>
 </ul>
 
-If even one of these sounds familiar, read on.
+Ground surveys arrive quarterly at best. Drones need people on site and decent weather. And the figures that do reach you have passed through contractors, site teams and department heads first. Each layer summarises, rounds and, sometimes, softens.
 
-### Why they stay vague
+Satellites can give you an independent second view. The question is which satellites.
 
-Ground surveys arrive quarterly at best. Drones need people on site and decent weather. Optical satellites, the kind behind the maps on your phone, see nothing through cloud, and over Sulawesi and Maluku the cloud can stay for weeks.
+## Chapter 1: what optical satellites could do {#optical}
 
-The figures that do reach you have passed through contractors, site teams and department heads first. Each layer summarises, rounds and, sometimes, softens.
+### What we achieved
+
+We started where most people start: Sentinel-2, the European optical satellite behind many of the maps you already know. From its images we built a land-cover map of the concession for each year, separating mining ground from vegetation, revegetation and water. For the first time the footprint and its growth were visible from outside the company's own reporting.
+{: .ew-intro}
+
+### Where it ran out
+
+Optical satellites are cameras. They need daylight and a clear sky, and over Sulawesi and Maluku the cloud can stay for weeks.
+
+<div class="ew-limits" markdown="1">
+- **Cloud gaps.** In the wet season, months can pass without a single clear image.
+- **Patchy years.** Some years have too few clear images to map with confidence.
+- **Yearly at best.** With so few clear views, a monthly picture was out of reach.
+- **Look-alikes.** Wet bare soil, fresh clearing and seasonal fields can look the same to a camera.
+</div>
 
 {% include ew-figure.html id="F2" %}
 
-### The cost of not knowing
+The optical maps answered *roughly where*. They could not reliably answer *how fast* or *since when*.
 
-It is the question in the board meeting you can't answer on the spot. It is hearing about a problem at the edge of your concession from a regulator, a journalist or a neighbour, before your own team mentions it. In both cases the facts were visible from orbit all along. Nobody was looking.
-
-## See your concession every six days, through the clouds {#radar}
+## Chapter 2: radar fills the gaps {#radar}
 
 ### Radar sees what cameras can't
 
-Satellite radar doesn't wait for sunlight or clear skies. It sends its own microwave signal to the ground and measures what comes back, through cloud, haze, smoke and darkness. Freshly dug ground, compacted haul roads, standing water and forest each return the signal differently, and the return changes when the ground changes.
-
-### A record nobody inside has
-
-The European Sentinel-1 radar satellites pass over your concession about every six days, and the archive goes back years. That gives a pass-by-pass history of every opening, through every wet season. No survey programme can rebuild that after the fact.
-
-### Independent by design
-
-Everything we report comes from satellite observation and your official concession boundary from public records. None of it comes from company reports, contractor logs or declared boundaries. We need no site access and no data from your team to start.
-
-## How it works {#how}
-
-Two techniques, each doing what it does best. **Machine learning tells us where the mine is. Radar tells us what is happening inside it, and when.**
+Satellite radar doesn't wait for sunlight or clear skies. It sends its own microwave signal to the ground and measures what comes back, through cloud, haze, smoke and darkness. Freshly dug ground, compacted roads, water and forest each return the signal differently.
 {: .ew-intro}
 
-{% include ew-figure.html id="F3" %}
+The European Sentinel-1 radar satellites pass over your concession several times a month, and the archive goes back years. That means no missing seasons and no missing years.
 
-### Step 1: Map the mine
+### Every year since 2017, without gaps
 
-A machine-learning model reads optical, radar and terrain data together and classifies every 10-metre pixel of the concession: pits and bare ground, waste and tailings, roads and infrastructure, water, vegetation and revegetation. The result is the mine footprint, the mask every later step works inside, so farms, floods and seasonal vegetation are never mistaken for mining.
-
-{% include ew-figure.html id="F4" %}
-
-### Step 2: Watch every opening
-
-On every radar pass, we run a statistical change test across the footprint. It asks one question of each pixel: has the ground surface changed more than radar noise alone can explain? Each answer comes with a significance level, so a flagged change is a measured result, not a visual impression.
-
-### Step 3: Turn pixels into decisions
-
-Changes are grouped into openings and summarised the way you think about the mine: hectares, start date, last activity, and a status for every opening (active, recently inactive, dormant or new). Everything is reported against your official concession boundary.
-
-### Step 4: Check our own work
-
-Results are validated against independent high-resolution imagery. Every figure carries a confidence level and the number of satellite passes behind it, so you always know how hard you can lean on a number.
-
-<div class="ew-techbox" markdown="1">
-**For your technical team.** Random Forest land-cover classification on Sentinel-2, Sentinel-1 and terrain features. Sentinel-1 GRD time series kept to one relative orbit each, with radiometric terrain flattening and speckle filtering. Sequential omnibus likelihood-ratio change detection on dual-polarisation (VV/VH) data. Validation against a stratified reference sample. Full method notes come with every delivery.
-</div>
-
-## What you'll know each month {#insights}
-
-Every month you receive a short briefing on your concession. This is the kind of panel it opens with.
-{: .ew-intro}
-
-{% include ew-kpis.html %}
-
-### How much is really being worked
-
-Most mines are bigger than their working face. We split the footprint into active, recently idle and dormant openings, so you can see how much of your licensed land is actually being worked, and how much has quietly stopped.
-
-{% include ew-figure.html id="F5" %}
-
-### When each opening started
-
-Every opening gets a start date from its own radar history, independent of internal records. Where that date falls before the recorded permit start, we flag it so you can verify it quietly, before anyone else asks.
-
-{% include ew-figure.html id="F6" %}
+Using radar alongside the optical record, we map land cover for every year from 2017 to 2025. The image at the top of this page compares the two, year by year: where optical is blank or blurred by cloud, the radar map is complete.
 
 {% include ew-table.html id="T1" %}
 
-### What's happening at the edges
+### Every month from now on
 
-Disturbance doesn't always respect a boundary line. We map any change beyond your concession limits and size it in hectares, whoever caused it: your contractor, a neighbour or someone else.
+Because radar sees through the wet season, we can map the concession every month. Put side by side, those months show how the mine actually moves: where it grows, where it pauses and where land starts to recover.
 
-{% include ew-figure.html id="F7" %}
+{% include ew-figure.html id="F3" %}
 
-### Whether the rain really stops work
+### From maps to rates
 
-"The rain slowed us down" is one of the most common lines in a mine report. Radar sees through the same rain, so month by month you can see how much activity really dropped, and when it picked up again.
+A complete, gap-free record is what makes rates possible. Instead of "the mine looks bigger", you get how many hectares were opened each year, how many were reclaimed, and what that means for carbon.
 
-{% include ew-figure.html id="F8" %}
-
-### Growth, ponds and reclamation
-
-A growth curve back to 2017, ready for the board. How ponds and settling basins behave through the wet season. How much disturbed land is actually revegetating. And, if you need it, an estimate of the carbon released by land clearing.
-
-{% include ew-figure.html id="F9" %}
-
-{% include ew-figure.html id="F10" %}
-
-## Walk into the meeting already knowing {#meeting}
-
-### A month in the life
-
-<div class="ew-vignette" markdown="1">
-*Illustrative scenario. The concession, names and numbers are fictional.*
-
-It is the first Monday of the month. Before the operations review, the general manager opens her EarthWise briefing on her phone. The footprint grew 2.3%, in line with plan. Two things stand out. Opening B-11 has shown no activity for eight months, although the last site report listed it as ongoing. And three new openings appeared on the eastern side in the past few weeks.
-
-In the meeting she doesn't present numbers. She asks two questions. The room goes quiet. Then someone promises an answer by Friday.
+<div class="ew-techbox" markdown="1">
+**For your technical team.** Land-cover classification combining Sentinel-1 radar, Sentinel-2 optical and terrain data with machine learning, mapped yearly from 2017 and monthly going forward. Sentinel-1 time series kept to consistent orbits, with terrain correction and speckle filtering. Method notes come with every report.
 </div>
 
-### Questions to put to your team
+## What's in your monthly report {#report}
 
-Every briefing ends with three to five specific questions drawn from the month's findings. You arrive with the question, not just the answer.
+Every month you receive one PDF report on your concession, written for people who decide. Each report builds on the last, so you can compare month by month and year by year.
+{: .ew-intro}
+
+### The headline numbers
+
+The report opens with a single page of numbers, each compared with last month and with 2017.
 
 {% include ew-table.html id="T2" %}
 
-### Numbers you can defend
+### How fast the mine is expanding
 
-When your technical staff push back, and good ones will, the method and confidence behind each figure are already on the page: how many satellite passes, how accurate the last validation was, how precise each date is.
+{% include ew-figure.html id="F4" %}
+
+### How much land is being reclaimed
+
+{% include ew-figure.html id="F5" %}
+
+### Carbon lost and regained
+
+Clearing releases the carbon stored in forest and soil; revegetation slowly takes some of it back. The report estimates both, from the same land-cover record.
+
+{% include ew-figure.html id="F6" %}
+
+### Delivered privately, as a PDF
 
 {% include ew-table.html id="T3" %}
 
-## Why this is harder than it looks {#moat}
+{% include ew-figure.html id="F8" %}
+
+## Why this is harder than it looks {#craft}
 
 ### Free data is not free answers
 
 The satellite data we use is public. Anyone can download it. Very few teams can turn it into a number a mine manager will put in front of a board. Raw radar is grainy with "speckle", hillsides look brighter or darker purely because of the viewing angle, and wet bare soil can look like fresh digging. Read naively, it produces confident-looking maps that are wrong.
 
-{% include ew-figure.html id="F11" %}
+{% include ew-figure.html id="F7" %}
 
 ### The craft behind each number
 
-Every figure rests on a chain of decisions: correcting for terrain and orbit geometry, filtering speckle without blurring pit edges, keeping each time series to a single viewing angle, testing change statistically instead of eyeballing it, masking out everything that isn't mine, and screening out false alarms such as rain on bare ground. Skip one step and the numbers drift. That chain is what EarthWise does.
+Every figure rests on a chain of decisions: correcting for terrain and orbit geometry, filtering speckle without blurring pit edges, keeping each time series to a consistent viewing angle, and combining radar with optical and terrain data so that look-alikes are told apart. Skip one step and the numbers drift.
 
 ### Built for Indonesian mining
 
-Our methods are tuned for nickel laterite on steep ridges, for the cloud seasons of Sulawesi and Maluku, and for Indonesia's official concession and permit records. This is not a generic global dashboard with your coordinates typed in.
+Our methods are tuned for nickel laterite on steep ridges and for the cloud seasons of Sulawesi and Maluku. This is not a generic global product with your coordinates typed in.
 
 ## What we won't tell you {#limits}
 
 <div class="ew-limits" markdown="1">
 - We don't estimate tonnage, production or ore grade.
 - We don't make legal, permitting or compliance judgements.
+- Carbon figures are estimates from land cover, not field measurements.
 - Where a finding needs checking on the ground or in the records, we say so plainly: **flagged for verification**.
 </div>
 
 Clear limits are what make the rest of the numbers worth trusting.
 
-## What you receive {#deliverables}
-
-Everything is delivered privately, to the people you name.
-
-<div class="ew-split">
-{% include ew-table.html id="T4" %}
-{% include ew-figure.html id="F12" %}
-</div>
-
 ## Start with one concession {#pilot}
 
 A pilot covers one concession, from its history to this month.
 
-1. **You name the concession.** The name or licence number is enough; the boundary comes from public records.
-2. **We build its history.** Land cover and radar activity from 2017 to today, checked against independent high-resolution imagery.
-3. **You receive your first briefing**, with a walkthrough of what we found and how far each number can be trusted.
+1. **You share your concession boundary.** A shapefile or KML is ideal. It stays confidential and is used only for your analysis.
+2. **We build its history.** Yearly land cover from 2017 to today, from radar and optical data.
+3. **You receive your first monthly PDF report**, with a walkthrough of what we found and what each number can and can't support.
 
-<p><a class="ew-btn" href="mailto:hello@example.com?subject=Radar%20mine%20monitoring%20pilot">Request a pilot</a> <span class="ew-note">&nbsp;Placeholder contact. Replace with the real address or form.</span></p>
+<p><a class="ew-btn ew-btn--solid" href="{% include ew-href.html url='mailto' subject='Pilot: Radar mine monitoring' %}">Request a pilot<i></i></a></p>
 
 ## Questions you may have {#faq}
 
 <div class="ew-faq">
-<details><summary>Do I need GIS staff to use this?</summary><p>No. The briefing is written for decision-makers. GIS files are included for your technical team if you want them.</p></details>
-<details><summary>How accurate is it?</summary><p>Every pilot includes a validation against independent high-resolution imagery, and the result is reported in every briefing. We publish the number rather than promise one.</p></details>
-<details><summary>Is it confidential?</summary><p>Yes. Briefings go only to the people you name.</p></details>
-<details><summary>Does my team need to be involved?</summary><p>Not to start. The analysis uses satellite data and public concession records. Later you can share survey figures so we can compare them side by side.</p></details>
-<details><summary>How is this different from drone surveys?</summary><p>A drone gives a detailed snapshot whenever someone flies it in good weather. Radar gives a continuous record every few days, back to 2017, with nobody on site. The two work well together.</p></details>
+<details><summary>Do I need GIS staff to use this?</summary><p>No. The report is a PDF written for decision-makers. Your technical team can read the method notes at the back.</p></details>
+<details><summary>Why do you need our concession boundary?</summary><p>It tells us exactly which land to analyse. We treat it as confidential: it is used only for your analysis and never shared.</p></details>
+<details><summary>Why a PDF, not a dashboard?</summary><p>A short monthly report is easier to read before a meeting, forward to the board and keep on file. Each report builds on the last, so comparisons over time are already done for you.</p></details>
+<details><summary>How often do reports arrive?</summary><p>Once a month. The first report also includes the full history from 2017.</p></details>
+<details><summary>Is it confidential?</summary><p>Yes. Your boundary and your reports go only to the people you name.</p></details>
+<details><summary>How is this different from drone surveys?</summary><p>A drone gives a detailed snapshot whenever someone flies it in good weather. Radar gives a continuous record, back to 2017, with nobody on site. The two work well together.</p></details>
 </div>

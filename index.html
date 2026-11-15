@@ -1,7 +1,7 @@
 ---
 layout: earthwise
-title: "Earthwise Analytics: satellite radar monitoring for mines"
-description: "Independent monthly monitoring of a mining concession from satellite radar, through cloud and rain."
+title: "Earthwise Analytics: satellite intelligence for mines and land"
+description: "Radar and machine learning that turn satellite data into clear answers about mines and land in Indonesia."
 body_class: ew-home
 ---
 {%- assign d = site.data.home -%}
@@ -34,30 +34,33 @@ body_class: ew-home
     <p class="ew-kicker">{{ d.banner.kicker }}</p>
     <h2>{{ d.banner.title }}</h2>
     <p class="ew-sub">{{ d.banner.text }}</p>
-    <a class="ew-btn ew-btn--solid" href="{{ d.banner.url }}">{{ d.banner.label }}<i></i></a>
+    <a class="ew-btn ew-btn--solid" href="{% include ew-href.html url=d.banner.url subject=d.banner.subject %}">{{ d.banner.label }}<i></i></a>
   </div>
 </section>
 
 <section class="ew-wrap ew-row ew-latest reveal">
   <div class="ew-row__side"><h2>{{ d.latest.title }}</h2><a class="ew-link" href="{{ d.latest.url }}">{{ d.latest.label }}<i></i></a></div>
   <div class="ew-row__cards ew-news">
-    {%- for post in paginator.posts -%}
-    <a class="ew-news__item" href="{{ post.url }}">
+    {%- for it in d.latest.list -%}
+    <a class="ew-news__item" href="{{ it.url }}">
       <div class="ew-news__thumb" aria-hidden="true"><span>Image placeholder</span></div>
-      <div><p class="ew-kicker">Update &middot; {{ post.date | date: '%b %-d, %Y' }}</p><h3>{{ post.title }}</h3></div>
+      <div><p class="ew-kicker">{{ it.kicker }}</p><h3>{{ it.title }}</h3></div>
     </a>
     {%- endfor -%}
   </div>
 </section>
 
-<section class="ew-strip">
-  <div class="ew-wrap ew-strip__grid">
-    {%- for s in d.strip -%}
+<section class="ew-strip" id="in-development">
+  <div class="ew-wrap">
+    <h2 class="reveal">{{ d.services.title }}</h2>
+    <div class="ew-strip__grid">
+    {%- for s in d.services.list -%}
     <div class="reveal">
       <div class="ew-strip__img" aria-hidden="true"><span>Image placeholder</span></div>
       <p class="ew-kicker">{{ s.kicker }}</p><p>{{ s.text }}</p>
       <a class="ew-link" href="{{ s.url }}">{{ s.label }}<i></i></a>
     </div>
     {%- endfor -%}
+    </div>
   </div>
 </section>
