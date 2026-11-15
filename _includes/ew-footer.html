@@ -1,0 +1,11 @@
+<footer class="ew-footer">
+  <div class="ew-wrap">
+    <div class="ew-footer__cols">
+      {%- for c in site.data.home.footer.columns -%}
+      <div><p class="ew-kicker">{{ c.title }}</p><ul>{%- for l in c.links -%}<li><a href="{{ l.url }}">{{ l.label }}</a></li>{%- endfor -%}</ul></div>
+      {%- endfor -%}
+    </div>
+    <p class="ew-footer__mark">Earthwise</p>
+    <p class="ew-footer__legal">&copy; {{ site.time | date: '%Y' }} {{ site.data.home.footer.legal }}</p>
+  </div>
+</footer>

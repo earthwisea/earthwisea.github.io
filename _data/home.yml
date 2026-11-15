@@ -1,0 +1,45 @@
+# Landing page + shared header/footer content. DRAFT COPY: edit freely.
+nav:
+  - { label: "Radar monitoring", url: "/radar-mine-monitoring/" }
+  - { label: "How it works", url: "/radar-mine-monitoring/#how" }
+  - { label: "About", url: "/about/" }
+  - { label: "Contact", url: "mailto:hello@example.com" }   # placeholder address
+hero:
+  kicker: "Satellite radar intelligence"
+  title: "Know what's happening at your mine, before anyone tells you."
+  sub: "Independent monthly monitoring of a single mining concession from satellite radar, through cloud and rain."
+  cta_label: "Request a pilot"
+  cta_url: "/radar-mine-monitoring/#pilot"
+rows:
+  - title: "See through the clouds"
+    button: { label: "Read more", url: "/radar-mine-monitoring/" }
+    cards:
+      - { title: "Every six days", text: "Radar images the ground day and night, whatever the weather, so the record has no gaps.", label: "How it works", url: "/radar-mine-monitoring/#radar" }
+      - { title: "Hectares, dates, activity", text: "For every opening: how much, since when and how active, with a confidence level on each number.", label: "What you'll know", url: "/radar-mine-monitoring/#insights" }
+  - title: "Built for decision-makers"
+    button: { label: "Read more", url: "/radar-mine-monitoring/#meeting" }
+    cards:
+      - { title: "Walk into the meeting informed", text: "A short monthly briefing written for people who decide, with GIS files for your technical team.", label: "The briefing", url: "/radar-mine-monitoring/#meeting" }
+      - { title: "Harder than it looks", text: "Why a continuous, validated history back to 2017 is difficult to reproduce.", label: "Why Earthwise", url: "/radar-mine-monitoring/#moat" }
+banner:
+  kicker: "Pilot"
+  title: "Start with one concession."
+  text: "Tell us the concession name or licence number. We build its history back to 2017 and send your first briefing."
+  label: "Request a pilot"
+  url: "/radar-mine-monitoring/#pilot"
+latest:
+  title: "Latest"
+  label: "All updates"
+  url: "/radar-mine-monitoring/"
+strip:
+  - { kicker: "Coverage", text: "Radar sees through cloud, smoke and darkness.", label: "Learn more", url: "/radar-mine-monitoring/#radar" }
+  - { kicker: "Method", text: "From raw imagery to validated change per opening.", label: "Learn more", url: "/radar-mine-monitoring/#how" }
+  - { kicker: "Limits", text: "What we can't tell you, stated plainly.", label: "Learn more", url: "/radar-mine-monitoring/#limits" }
+  - { kicker: "Deliverables", text: "Briefing, maps, tables and GIS files.", label: "Learn more", url: "/radar-mine-monitoring/#deliverables" }
+footer:
+  columns:
+    - title: "Product"
+      links: [ { label: "Radar mine monitoring", url: "/radar-mine-monitoring/" }, { label: "How it works", url: "/radar-mine-monitoring/#how" }, { label: "FAQ", url: "/radar-mine-monitoring/#faq" } ]
+    - title: "Company"
+      links: [ { label: "About", url: "/about/" }, { label: "Contact", url: "mailto:hello@example.com" } ]
+  legal: "Earthwise Analytics"

@@ -1,48 +1,47 @@
 ---
-layout: default
-class: 'page-template article-template'
+layout: earthwise
 ---
-<link rel="stylesheet" type="text/css" href="/assets/css/earthwise-article.css" />
+<section class="ew-hero ew-dark ew-hero--article">
+  <div class="ew-wrap ew-hero__in">
+    {% if page.draft %}<p class="ew-draft">Draft layout &middot; all numbers, maps and charts are dummy placeholders &middot; not for publication</p>{% endif %}
+    {% if page.eyebrow %}<p class="ew-kicker">{{ page.eyebrow }}</p>{% endif %}
+    <h1>{{ page.title }}</h1>
+    {% if page.lede %}<p class="ew-sub">{{ page.lede }}</p>{% endif %}
+    {% if page.cta_label %}<p class="ew-hero__btns"><a class="ew-btn ew-btn--solid" href="{{ page.cta_url }}">{{ page.cta_label }}<i></i></a>{% if page.cta_secondary_label %}<a class="ew-btn ew-btn--outline-light" href="{{ page.cta_secondary_url }}">{{ page.cta_secondary_label }}<i></i></a>{% endif %}</p>{% endif %}
+  </div>
+</section>
 
-<header class="main-header post-head no-cover">
-    <nav class="main-nav clearfix">
-        {% if page.logo %}<a class="blog-logo" href="/"><img src="/{{ page.logo }}" alt="Logo" /></a>{% endif %}
-        {% if page.navigation %}<a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>{% endif %}
-    </nav>
-</header>
+<div class="ew-article">
+{% if page.hero_figure %}<div class="ew-wrap ew-hero__figure">{% include ew-figure.html id=page.hero_figure %}</div>{% endif %}
 
-<main class="content ew-article" role="main">
+{% if page.toc %}
+<nav class="ew-wrap ew-toc" aria-label="On this page">
+  <p class="ew-kicker">On this page</p>
+  <ol>{% for item in page.toc %}<li><a href="#{{ item.id }}">{{ item.label }}</a></li>{% endfor %}</ol>
+</nav>
+{% endif %}
 
-    {% if page.draft %}<div class="ew-draft">Draft layout &middot; all numbers, maps and charts are dummy placeholders &middot; not for publication</div>{% endif %}
+{%- assign parts = content | split: '<h2' -%}
+{%- for part in parts offset: 1 -%}
+  {%- assign head = part | split: '</h2>' | first -%}
+  {%- assign sid = head | split: '"' | slice: 1 | first -%}
+  {%- assign stitle = head | split: '>' | last -%}
+  {%- assign body = part | remove_first: head | remove_first: '</h2>' -%}
+<section class="ew-wrap ew-sec reveal" id="{{ sid }}">
+  <div class="ew-sec__head"><h2>{{ stitle }}</h2></div>
+  <div class="ew-sec__body ew-body">{{ body }}</div>
+</section>
+{%- endfor -%}
 
-    <header class="ew-hero">
-        {% if page.eyebrow %}<p class="ew-eyebrow">{{ page.eyebrow }}</p>{% endif %}
-        <h1 class="ew-hero__title">{{ page.title }}</h1>
-        {% if page.lede %}<p class="ew-hero__lede">{{ page.lede }}</p>{% endif %}
-        {% if page.cta_label %}<p class="ew-hero__cta"><a class="ew-btn" href="{{ page.cta_url }}">{{ page.cta_label }}</a>{% if page.cta_secondary_label %} <a class="ew-btn ew-btn--ghost" href="{{ page.cta_secondary_url }}">{{ page.cta_secondary_label }}</a>{% endif %}</p>{% endif %}
-    </header>
+{% if page.draft %}<div class="ew-wrap">{% include ew-register.html %}</div>{% endif %}
+</div>
 
-    {% if page.hero_figure %}<div class="ew-hero__figure">{% include ew-figure.html id=page.hero_figure %}</div>{% endif %}
-
-    {% if page.toc %}
-    <nav class="ew-toc" aria-label="On this page">
-        <span class="ew-toc__label">On this page</span>
-        <ol>{% for item in page.toc %}<li><a href="#{{ item.id }}">{{ item.label }}</a></li>{% endfor %}</ol>
-    </nav>
-    {% endif %}
-
-    <article class="ew-body">
-        {{ content }}
-    </article>
-
-    {% if page.cta_label %}
-    <section class="ew-cta-band">
-        <h2>{{ page.cta_band_title | default: page.cta_label }}</h2>
-        {% if page.cta_band_text %}<p>{{ page.cta_band_text }}</p>{% endif %}
-        <a class="ew-btn ew-btn--light" href="{{ page.cta_url }}">{{ page.cta_label }}</a>
-    </section>
-    {% endif %}
-
-    {% if page.draft %}{% include ew-register.html %}{% endif %}
-
-</main>
+{% if page.cta_label %}
+<section class="ew-banner ew-dark">
+  <div class="ew-wrap">
+    <h2>{{ page.cta_band_title | default: page.cta_label }}</h2>
+    {% if page.cta_band_text %}<p class="ew-sub">{{ page.cta_band_text }}</p>{% endif %}
+    <a class="ew-btn ew-btn--solid" href="{{ page.cta_url }}">{{ page.cta_label }}<i></i></a>
+  </div>
+</section>
+{% endif %}
